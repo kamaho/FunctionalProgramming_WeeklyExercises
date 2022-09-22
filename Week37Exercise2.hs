@@ -1,7 +1,12 @@
 module Week37Exercise2 where
-
 import Data.List (unwords)
 import Data.Maybe (fromMaybe)
+
+-- lage funksjonen numberToWord :: Integer -> String 
+-- som tar et heltall fra  til  og returnerer en streng 
+-- med hvordan man sier dette tallet (på engelsk). 
+-- For eksempel, numberToWord 65400042 skal 
+-- returnere "sixty five million four hundred thousand forty two".
 
 {- Takes the numbers used in the words for the integers 0 to 999 999 999 and
 returns their corresponding words -}

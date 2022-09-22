@@ -1,6 +1,13 @@
 module Week37Exercise0 where
     
-
+    -- Funksjonen skal lage en liste med strenger på 
+    -- formen "_ is _ years old" hvor hvert navn i 
+    -- første input settes sammen med en alder fra den
+    --  andre inputen (se eksempel nedenfor), 
+    --  MEN et element skal kun inkluderes i listen
+    -- om alderen er høyst 50 år, de som er eldre skal 
+    -- filtreres bort.
+    
     namesAndAges :: [String] -> [Integer] -> [String]
     namesAndAges x y = flett (arrangeLst1 x y) (arrangeLst2 x y)
 

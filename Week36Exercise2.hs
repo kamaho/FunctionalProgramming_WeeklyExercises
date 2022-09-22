@@ -1,4 +1,9 @@
 module Week37Exercise0 where
+
+    -- Et palindrom er et ord som er likt om du
+    -- leser det framlengs og baklengs, 
+    -- for eksempel "abba", "reser" og "tillit".
+    
         -- oppgave 2a
         halfPalindrome :: String -> Maybe String
         halfPalindrome x 
