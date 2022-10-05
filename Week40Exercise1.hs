@@ -86,9 +86,13 @@ solarSystem =
         ]
     }
 
+
+-- Tar inn planets og bruker countMoons på hvert element ved bruk av map funksjonen
 numberOfMoons :: PlanetarySystem -> Integer
 numberOfMoons = sum . map(countMoons).planets
 
+-- countMoons går igjennom hver Planet og ser etter listen moons (utelukker planets ved bruk av _)
+-- bruker så genericLength for å finne lengden på listen moons, noe som gir oss antall moons ved hver planet.
 countMoons :: Planet -> Integer
 countMoons (Planet _ moons)= genericLength moons
 
@@ -99,13 +103,13 @@ atLeastOneMoon = map(countMoons).planets
 --som returnerer en liste med kun de planetene i planetsystemet som har minst én måne.
 
 --findMoons :: PlanetarySystem -> 
-findMoons :: Planet -> String
-findMoons (Planet planetName moons) = 
+-- findMoons :: Planet -> String
+-- findMoons (Planet planetName moons) 
 
 
-helpFilter :: Planet -> 
+helpFilter :: PlanetarySystem -> [Planet]
 helpFilter = filter(countMoons > 1).planets
 
 
-    -- Planet moons 
-    -- return True if planet have more than 1 moon
+-- Planet moons 
+-- return True if planet have more than 1 moon
