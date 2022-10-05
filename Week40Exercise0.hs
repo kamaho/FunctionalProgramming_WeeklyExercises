@@ -13,9 +13,34 @@ module Week40Exercise0 where
     -- Obs: "" er et palindrom av partallslengde (uten midtbokstav) og "a" er et palindrom 
     -- av oddetallslengde (med 'a' som midtbokstav).
 
-   
+    import Data.Maybe()
+    import Data.List()
 
-    data Palindrome = Palindrome {halfPalindrome :: String,
-                                  midLetter :: String
-                                 } deriving (Show) 
-   
+    data Palindrome = PalinOdd (String, String)
+                    | PalinPart String
+        deriving (Show)
+
+    --a)
+    palindrome :: String -> Maybe Palindrome
+    palindrome x | x /= reverse x = Nothing
+                 |  odd (length x) = Just (palinOdd x)
+                 |  otherwise = Just (palinPart x)
+
+
+    palinPart :: String -> Palindrome
+    palinPart x = PalinPart (pal0 x)
+
+    palinOdd :: String -> Palindrome
+    palinOdd x = PalinOdd (pal0 x, pal1 x)
+
+
+    pal0 :: String -> String
+    pal0 x = take (div (length(x)) 2) (x)
+
+    pal1 :: String -> String
+    pal1 x = [(x !! (div (length(x)) 2))]
+
+    -- b)
+    toString :: Palindrome -> String 
+    toString (PalinPart x) = x ++ reverse (x)
+    toString (PalinOdd x) = fst (x) ++ snd (x) ++ reverse (fst x)  
