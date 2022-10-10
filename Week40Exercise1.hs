@@ -96,5 +96,4 @@ atLeastOneMoon :: PlanetarySystem -> [Planet]
 atLeastOneMoon = filter(findMoons).planets
 
 findMoons :: Planet -> Bool
-findMoons (Planet _ moons) = if length moons > 0 then True
-                                      else False
+findMoons (Planet _ moons) = if length moons > 0 then True else False
