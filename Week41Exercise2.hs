@@ -1,7 +1,7 @@
 module Week41Exercise2 where
     import Data.Map (Map)
     import qualified Data.Map as Map
-    import Data.Maybe
+    import Data.Maybe ( fromJust, isNothing )
     
     data Expr a = Var a | Lit Integer | Mul (Expr a) (Expr a) | Add (Expr a) (Expr a) deriving (Eq, Show)
     
